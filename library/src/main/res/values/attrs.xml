@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--渐变色布局-->
+    <declare-styleable name="GradientLayout">
+        <attr name="fromColor" format="color" />
+        <attr name="toColor" format="color" />
+        <attr name="progress" format="float" />
+    </declare-styleable>
+</resources>
