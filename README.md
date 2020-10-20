@@ -1,12 +1,34 @@
-一种背景可渐变的布局
+# gradient-layout
+> 渐变背景布局
 
-![](https://github.com/lavalike/GradientLayout/blob/master/docs/images/gif.gif)
+[![Platform](https://img.shields.io/badge/Platform-Android-00CC00.svg?style=flat)](https://www.android.com)
+[![](https://jitpack.io/v/lavalike/sequence-controller.svg)](https://jitpack.io/#lavalike/sequence-controller)
 
-添加gradle依赖：
-> compile 'com.wangzhen:GradientLayout:1.0.0'
 
-属性值：
-```xml
+### 依赖导入
+
+项目根目录
+
+``` gradle
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+
+模块目录
+
+``` gradle
+dependencies {
+	implementation 'com.github.lavalike:GradientLayout:0.0.1'
+}
+```
+
+### 属性说明
+
+``` xml
 <declare-styleable name="GradientLayout">
     <attr name="fromColor" format="color" />
     <attr name="toColor" format="color" />
@@ -14,43 +36,12 @@
 </declare-styleable>
 ```
 
-xml使用：
-```xml
-<com.wangzhen.gradientlayout.GradientLayout
-        android:id="@+id/gradientLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:fromColor="@color/colorPrimary"
-        app:toColor="@color/colorAccent"
-        app:progress="30">
+### 代码示例
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="56dp"
-        android:layout_marginLeft="18dp"
-        android:fitsSystemWindows="true"
-        android:gravity="center"
-        android:text="@string/app_name"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-    </RelativeLayout>
-</com.wangzhen.gradientlayout.GradientLayout>
-    
-<SeekBar
-    android:id="@+id/seekbar"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    android:layout_marginTop="50dp"
-    android:max="100"
-    android:progress="20" />
+``` java
+GradientLayout gradientLayout = (GradientLayout) findViewById(R.id.gradientLayout);
+gradientLayout.setProgress(10);
 ```
 
-Activity使用：
-```java
-gradientLayout = (GradientLayout) findViewById(R.id.gradientLayout);
-//设置进度（0~100）
-gradientLayout.setProgress(progress);
-```
+### 效果
+![](https://tva1.sinaimg.cn/large/007S8ZIlgy1gjvrzm49rgg30ad0iitiu.gif)
