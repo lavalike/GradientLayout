@@ -15,7 +15,7 @@ public class MainActivity extends BaseActivity implements SeekBar.OnSeekBarChang
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         gradientLayout = (GradientLayout) findViewById(R.id.gradientLayout);
-        seekBar = (SeekBar) findViewById(R.id.seekbar);
+        seekBar = (SeekBar) findViewById(R.id.seek_bar);
         seekBar.setOnSeekBarChangeListener(this);
         gradientLayout.setProgress(seekBar.getProgress());
     }

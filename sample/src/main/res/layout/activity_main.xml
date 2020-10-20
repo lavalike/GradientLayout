@@ -10,35 +10,28 @@
     <com.wangzhen.gradientlayout.GradientLayout
         android:id="@+id/gradientLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fitsSystemWindows="true"
         app:fromColor="@color/colorPrimary"
         app:toColor="@color/colorAccent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_marginStart="16sp"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="56dp"
-                android:layout_marginLeft="18dp"
-                android:fitsSystemWindows="true"
-                android:gravity="center"
-                android:text="@string/app_name"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
     </com.wangzhen.gradientlayout.GradientLayout>
 
     <SeekBar
-        android:id="@+id/seekbar"
+        android:id="@+id/seek_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_height="100dp"
         android:max="100"
         android:progress="20" />
 

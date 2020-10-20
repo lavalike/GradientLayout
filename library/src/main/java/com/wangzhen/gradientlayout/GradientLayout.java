@@ -1,14 +1,11 @@
 package com.wangzhen.gradientlayout;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Rect;
-import android.os.Build;
-import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.view.WindowInsets;
 import android.widget.RelativeLayout;
+
+import androidx.core.content.ContextCompat;
 
 /**
  * 渐变背景布局
@@ -94,26 +91,5 @@ public class GradientLayout extends RelativeLayout {
 
         return ((oa + aGap) << 24) | ((or + rGap) << 16) | ((og + gGap) << 8)
                 | (ob + bGap);
-    }
-
-    @TargetApi(Build.VERSION_CODES.KITKAT_WATCH)
-    @Override
-    public WindowInsets dispatchApplyWindowInsets(WindowInsets insets) {
-        if (insets != null) {
-            insets = insets.replaceSystemWindowInsets(insets.getSystemWindowInsetLeft(),
-                    insets.getSystemWindowInsetTop(),
-                    insets.getSystemWindowInsetRight(),
-                    0);
-        }
-        return super.dispatchApplyWindowInsets(insets);
-
-    }
-
-    @Override
-    protected boolean fitSystemWindows(Rect insets) {
-        if (insets != null) {
-            insets.set(insets.left, insets.top, insets.right, 0);
-        }
-        return super.fitSystemWindows(insets);
     }
 }
